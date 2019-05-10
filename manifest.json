@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Exclude-Sites",
+  "version": "0.1",
+ 
+  "description": "Exclude sites from google search result.",
+
+
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.com/search*"],
+      "js": ["main.js"]
+    }
+  ],
+
+  "permissions": ["storage"],
+
+  "options_ui": {
+    "page": "options.html"
+  }
+
+}
