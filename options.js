@@ -11,11 +11,16 @@ function saveList(e) {
       data: jsonstr
     })
 
+  } else {
+    browser.storage.local.set({
+      data: "[]"
+    })
   }
 }
 
 function clearAll(e) {
   browser.storage.local.clear()
+  location.relaod()
 }
 
 function GotData(item) {
@@ -33,14 +38,12 @@ function GotError(e) {
 }
 
 function showList() {
-  let local = browser.storage.local.get("data")
+  const local = browser.storage.local.get("data")
   local.then(GotData, GotError)
 }
 
-/*
 const clear = document.getElementById("clear")
 clear.addEventListener("click", clearAll)
-*/
 
 document.querySelector("form").addEventListener("submit", saveList)
 showList()
