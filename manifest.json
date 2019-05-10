@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Exclude-Sites",
+  "name": "Excluder-of-ugly-Site",
   "version": "0.1",
  
   "description": "Exclude sites from google search result.",
